@@ -1,0 +1,12 @@
+%h1 Open Data Chicago
+%p 
+  Open data sets from Chicago, Cook County, and Illinois. Managed by 
+  %a{:href => 'https://twitter.com/derek_eder'} @derek_eder
+
+%ul
+  - @feed.entries.each do |entry|
+    %li
+      = entry.published.strftime("%d %b %y")
+      \-
+      %a{:href => entry.url}
+        = entry.title
